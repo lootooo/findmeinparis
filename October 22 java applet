@@ -1,0 +1,130 @@
+changing color on button press
+
+```java
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+
+public class B extends Applet implements ActionListener
+{
+   Button show;
+   TextField t;
+   String name;
+
+
+   public void init()
+   {
+   	 show=new Button("show");
+       t=new TextField();
+   	 show.addActionListener(this);
+       add(show);
+       add(t);
+   }
+
+
+   public void actionPerformed(ActionEvent e)
+   {
+   	  if(e.getSource()==show)
+   		{
+
+            
+   		}
+   }
+}
+
+
+
+
+  ```
+  
+  2. Orange or another color
+  
+  ```java
+  
+  import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+
+public class A extends Applet implements ActionListener
+{
+   Button a,b;
+   public void init()
+   {
+   	 a=new Button("Teal");
+   	 b=new Button("Orange");
+   	 a.addActionListener(this);
+   	 b.addActionListener(this);
+   	 add(a);
+   	 add(b);
+   }
+
+
+   public void actionPerformed(ActionEvent e)
+   {
+   	  if(e.getSource()==a)
+   		{
+   			setBackground(Color.red);
+   		}
+   	   if(e.getSource()==b)
+   	   {
+   	   	setBackground(Color.orange);
+   	   }
+   }
+}
+
+```
+
+
+
+
+
+3. drawing shapes
+
+
+```java
+import java.applet.*;
+import java.awt.event.*;
+import java.awt.*;
+public class Myevent extends Applet implements ActionListener{
+  String s="jaskd";
+  TextField t;
+  Button b;
+  // int first;
+  // int second;
+
+  public void init()
+  {
+  	t=new TextField();
+  	b=new Button("show");
+  	b.addActionListener(this);
+  	add(b);
+  	add(t);
+
+  }
+
+  public void actionPerformed(ActionEvent e)
+  {
+  	s=t.getText();
+  	repaint();
+  }
+
+  public void paint(Graphics g)
+  {
+  	g.drawString(s,100,100);
+  	g.drawRect(100,100,100,100);
+  	g.drawOval(100,100,100,100);
+  	g.drawOval(80,80,141,141);
+  }
+}
+
+
+ ```
+ 
+ 
+ 
+ #
+ ##
+ 
+ ###
