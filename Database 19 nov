@@ -1,0 +1,20 @@
+```sql
+select * from Bank;
+select * from Loan;
+
+select name from Bank,Loan where Bank.acct_no=Loan.acct_no;
+
+select name from Bank where acct_no in (select acct_no from Loan);
+
+select name from Bank where acct_no=(select acct_no from Bank minus select acct_no from Loan);
+
+select loan_no from Loan where acct_no=(select  acct_no from Bank where name='Vinit');
+
+
+select * from Product;
+
+
+
+select loan_amt as difference from Loan;
+
+```
