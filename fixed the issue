@@ -1,0 +1,61 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class M{
+	public static void main(String[] args) {
+		Q q=new Q();
+		q.setVisible(true);
+		q.setSize(600,600);
+	}
+}
+
+
+class Q extends JFrame{
+
+	JButton jb;
+	JTextField username;
+	JTextField password;
+	JLabel label1;
+	JLabel label2;
+
+
+	Q() {
+
+		try{
+		setLayout(null);
+		username=new JTextField();
+		password=new JTextField();
+		jb=new JButton();
+		label1=new JLabel();
+		label1.setText("Enter the username");
+		label2=new JLabel();
+		label2.setText("Enter the password");
+
+		label1.setBounds(20,20,40,10);
+		label2.setBounds(20,20,80,100);
+		jb.setBounds(40,40,40,10);
+
+		add(label1);
+		add(label2);
+		  add(username);
+		  add(password);
+		//  add(jb);
+
+		}
+		catch (Exception e){
+
+		}
+	}
+
+}
+
+
+
+
+
+/*   <applet code="M" width=222 height=222>  </applet>*/
+
+
