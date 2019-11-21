@@ -1,0 +1,241 @@
+```java
+class A{
+	public static void main(String[] args) {
+		B b=B.show();
+	}
+}
+
+class B{
+	private(){
+
+	}
+
+	static B show(){
+		B b=new B();
+		return  b;
+	}
+}
+```
+
+
+
+2. This is the above concept
+
+```java
+import java.net.*;
+
+
+class A{
+	public static void main(String[] args) {
+		InetAddress in=new InetAddress();
+	}
+}
+
+```
+
+
+
+3. To get the ip address of local device
+
+```java
+import java.net.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		InetAddress ia=InetAddress.getLocalHost();
+		System.out.println(ia);
+	}
+}
+
+
+```
+
+4. To know the ip address of a website (ARP)
+
+```java
+import java.net.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		InetAddress ia=InetAddress.getByName("www.google.com");
+		System.out.println(ia);
+				System.out.println(ia.getHostName());
+						System.out.println(ia.getHostAddress());
+	}
+}
+
+
+```
+
+5. 
+
+
+```java
+import java.net.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		URL ia=URL("http://localhost:8080/geu/geupage.html");
+		System.out.println(ia);
+				System.out.println(ia.getHost());
+				System.out.println(ia.getProtocol());
+				
+					System.out.println(ia.getFile());
+						System.out.println(ia.getHost());
+
+
+
+
+	}
+}
+
+```
+
+6.
+
+```java
+import java.net.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		URL ia= new URL("http://localhost:8080/geu/geupage.html");
+		System.out.println(ia);
+				System.out.println(ia.getHost());
+				System.out.println(ia.getProtocol());
+				
+					System.out.println(ia.getFile());
+						System.out.println(ia.getHost());
+
+
+
+
+	}
+}
+
+```
+
+
+
+
+7. 
+
+```java
+import java.net.*;
+import java.io.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		URL ia= new URL("http://localhost:8080/geu/geupage.html");
+
+		InputStream is=ia.openStream();
+		BufferedReader bfr=new BufferedReader(new InputStreamReader(is));
+		System.out.println(bfr.readLine());
+
+		
+
+	}
+}
+
+```
+
+
+
+8. sugn char
+
+
+import java.net.*;
+import java.io.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		URL ia= new URL("http://localhost:8080/geu/geupage.html");
+
+		InputStream is=ia.openStream();
+		BufferedReader bfr=new BufferedReader(new InputStreamReader(is));
+		System.out.println(bfr.readLine());
+		System.out.println(	(char)is.read());
+
+
+
+	}
+}
+
+
+
+
+
+
+
+9. converting a file to URL.
+
+
+
+
+```java
+import java.net.*;
+import java.io.*;
+
+
+class A{
+	public static void main(String[] args) throws Exception {
+		File f=new File("A.java");
+		URL u=f.toURL();
+		InputStream is=u.openStream();
+		BufferedReader bfr=new BufferedReader(new InputStreamReader(is));
+		System.out.println(bfr.readLine());
+		System.out.println(	(char)is.read());
+
+
+
+	}
+}
+```
+
+
+
+
+
+
+10. Interaction between client and server
+
+
+```java
+import java.net.*;
+import java.io.*;
+
+
+class Client{
+	public static void main(String[] args) throws Exception {
+	
+		Socket s=new Socket("localhost",8080);
+
+	}
+}
+```
+
+
+
+11. *Another* part
+
+```java
+import java.net.*;
+import java.io.*;
+
+
+class Client{
+	public static void main(String[] args) throws Exception {
+	
+		Socket s=new Socket("localhost",8080);
+
+	}
+}
+
+```
+
+
