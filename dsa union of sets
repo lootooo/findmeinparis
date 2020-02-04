@@ -1,0 +1,50 @@
+
+
+```c
+
+#include<stdio.h>
+
+int main(){
+
+    int A[]={1,4,5,7};
+    int B[]={2,5,7};
+    int i,j,k,element,index=0;
+
+
+    int length_a=sizeof(A)/sizeof(A[0]);
+    int length_b=sizeof(B)/sizeof(B[0]);
+int length_c=length_a+length_b;
+    int *C=(int *)malloc(sizeof(int)*(length_c));
+
+
+    for(i=0;i<length_a;i++){
+        C[i]=A[i];
+
+    }
+    index=i;
+
+    for(j=0;j<length_b;j++){
+        element=B[j];
+        for(k=0;k<length_c;k++){
+            if(element==C[k])
+                break;
+
+            if(k==length_a){
+                C[index++]=element;
+            }
+        }
+    }
+
+
+    for(j=0;j<length_c;j++){
+        printf("%d  ",C[j]);
+    }
+
+
+}
+
+
+
+
+
+```
