@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<ctype.h>
+#define MAX 10
+
+int push(int [],int);
+int pop(int [],int);
+void display(int [],int );
+
+
+int main(){
+    int stack[MAX],TOP=-1,choice;
+    char c;
+
+    do{
+        printf("1.Push\n2.Pop\n3.Display\n");
+        scanf("%d",&choice);
+
+            switch(choice){
+
+                case 1:
+                    if(TOP==MAX-1){
+                        printf("Can't insert elements , stack is full\n");
+                    }
+                    else{
+
+                        TOP=push(stack,TOP);
+                    }
+                    break;
+
+                case 2:
+                    if(TOP==-1){
+                        printf("No elements to delete.\n");
+                    }
+                    else{
+
+                        TOP=pop(stack,TOP);
+
+                    }
+                    break;
+
+
+                case 3:
+
+                      if(TOP==-1){
+                        printf("No elements to display \n");
+                      }
+                      else{
+                           display(stack,TOP);
+                      }
+
+                      break;
+
+                }
+
+
+            printf("Do you want to continue Y/N");
+            fflush(stdin);
+            scanf("%c",&c);
+            }
+            while(toupper(c)=='Y');
+
+
+}
+
+int push(int stack[], int TOP){
+    int element;
+  TOP+=1;
+
+  printf("Enter the element \n");
+  scanf("%d",&element);
+  stack[TOP]=element;
+  return TOP;
+
+}
+
+
+int pop(int stack[], int TOP){
+    int element=stack[TOP];
+    TOP-=1;
+    printf("The popped element  is %d \n",element);
+    return TOP;
+}
+
+
+void display(int stack[],int TOP){
+        int i=TOP;
+        for(i=TOP;i>-1;i--){
+            printf("%d  \n",stack[i]);
+        }
+}
