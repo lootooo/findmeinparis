@@ -1,3 +1,82 @@
+# DDA
+
+
+
+
+# Breshnam
+
+```C
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<graphics.h>
+
+
+int main(){
+
+   int gd=DETECT,gm;
+
+   int p;
+   int x1,x2,y1,y2,dx,dy,xstart,ystart,xend,yend;
+   int k=200,h=300;
+	clrscr();
+   initgraph(&gd,&gm,"C:\\TC\\BGI");
+
+   printf("Enter the coordinates    x1,y1   and x2,y2 respectively\n");
+   scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+
+
+   if(x1<x2){
+     xstart=x1;
+     ystart=y1;
+     xend=x2;
+
+
+   }
+   else{
+
+     xstart=x2;
+     ystart=y2;
+     xend=x1;
+   }
+
+   dx=abs(x2-x1);
+   dy=abs(y2-y1);
+   putpixel(xstart,ystart,3);
+
+   p=2*dx-dy;
+
+   line(h,k,640,k);
+   line(h,k,h,10);
+
+
+
+
+   while(xstart<xend){
+     if(p<0){
+       p=p+2*dy;
+       xstart+=1;
+     }
+     else{
+      p=p+2*dy-2*dx;
+      xstart+=1;
+      ystart+=1;
+     }
+
+     putpixel(h+xstart,k-ystart,3);
+
+   }
+
+   getch();
+
+
+ return 0;
+
+}
+
+
+```
+
 
 # Sep 5
 
