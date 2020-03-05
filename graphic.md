@@ -360,3 +360,81 @@ int main()
 
 
 
+
+## Scaling  
+
+
+```c
+
+#include <graphics.h>
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int i,j,a[3][3],t,l;
+    float Sx,Sy,r[3][3],b[3][3];
+    int h=300,k=250;
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"C://TC//BGI");
+
+    printf("Enter the first point A (x1,y1) \n");
+    scanf("%d%d",&a[0][0],&a[1][0]);
+
+    printf("Enter the first poin	t B (x2,y2) \n");
+    scanf("%d%d",&a[0][1],&a[1][1]);
+
+    printf("Enter the first point C (x3,y3) \n");
+    scanf("%d%d",&a[0][2],&a[1][2]);
+    a[2][0]=a[2][1]=a[2][2]=1;
+    printf("Enter the scaling factors Sx and Sy \n");
+    scanf("%f%f",&Sx,&Sy);
+
+
+    line(h,k,640,k);
+    line(h,k,h,10);
+
+    line(h+a[0][0],k-a[1][0],h+a[0][1],k-a[1][1]);
+    line(h+a[0][0],k-a[1][0],h+a[0][2],k-a[1][2]);
+    line(h+a[0][1],k-a[1][1],h+a[0][2],k-a[1][2]);
+
+
+    b[0][0]=Sx;
+    b[1][1]=Sy;
+
+    b[0][1]=b[1][0]=b[0][2]=b[1][2]=b[2][0]=b[2][1]=0.0;
+    b[2][2]=1;
+
+    for(i=0;i<3;i++){
+	for(l=0;l<3;l++){
+	    r[i][l]=0.0;
+	    for(j=0;j<3;j++){
+		r[i][l]=r[i][l]+(b[i][j]*a[j][l]);
+	    }
+	}
+    }
+
+
+
+    for(i=0;i<3;i++){
+	for(j=0;j<3;j++){
+	    printf("%f  ",r[i][j]);
+	}
+	printf("\n");
+    }
+
+
+
+    line(floor(h+r[0][0]),floor(k-r[1][0]),floor(h+r[0][1]),floor(k-r[1][1]));
+    line(floor(h+r[0][0]),floor(k-r[1][0]),floor(h+r[0][2]),floor(k-r[1][2]));
+    line(floor(h+r[0][1]),floor(k-r[1][1]),floor(h+r[0][2]),floor(k-r[1][2]));
+
+
+
+
+    return 0;
+
+
+
+}
+```
+
+
